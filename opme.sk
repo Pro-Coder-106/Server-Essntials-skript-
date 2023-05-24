@@ -1,0 +1,12 @@
+command opme <text>:
+    trigger:
+        if arg-1 is {_pin}:
+            send "&aCorrect Pin!"
+        else:
+            send "&cIncorrect pin."
+
+command SetOpmePin <text>:
+    permission: op
+    trigger:
+        set {_pin} to arg-1
+        send "&aSet opme pin to: &e%arg-1%"
