@@ -1,0 +1,5 @@
+command ban <player> <text>:
+    permission: minecraft.command.ban
+    trigger:
+        execute console command "ban %arg-1% %arg-2%"
+        send "&4[&c&lBan&r&4] &a&l%arg-1%&c was just banned for:&e %arg-2%"
