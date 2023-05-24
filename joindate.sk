@@ -1,0 +1,17 @@
+on first join:
+    set {firstJoin.%uuid of player%} to now
+
+on join:
+    set {lastJoin.%uuid of player%} to now
+
+command /lastjoin <player>:
+    trigger:
+        send "&a%arg-1% last joined the server on %{lastJoin.%uuid of arg-1%}%." to player
+
+command /joindate <player>:
+    trigger:
+        if arg-1 is set:
+            if player is op:
+                send "&a%arg-1% first joined the server on %{firstJoin.%uuid of arg-1%}%." to player
+        else:
+            send "&aYou first joined the server on %{firstJoin.%uuid of player%}%." to player
